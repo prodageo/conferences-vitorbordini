@@ -49,3 +49,10 @@ What do we do after the Gaussian Process? We can look at two things:
 * Probability of improvement. We try to pick a point to sample at which that probability of improvement is maximized.
 
 ## Optimizing Performance Parameters
+
+What we want to do here is a sort of cross-validation. We have several functions, which one will we pick? We do that with that algorithm:
+
+We limit all the parameters to certain values. After that, we will set a SLA (Service Level Agreement). Basically, the SLA tells me which values of the function to test are acceptable.
+
+Finally, for a given set of parameters, we test the function generated, and if it meets the SLA standards, we put this function in a list. We do that for every combination of parameters and then we choose the best fuction possible according to the SLA.
+
