@@ -24,11 +24,28 @@ though we've made a measurement at two different points, we have some uncertaint
 
 ## Gaussian Processes
 
+The idea of this topic is to give an intuition of a Gaussian Process. Thus, the mathematical details will not be explored and fully explained.
+
 There are two interpretations of a Gaussian Process:
 
 * A vector of uncountably many gaussian variables with given mean and joint covariate distribution. 
 
 * A distribution over functions.
 
+In mathematical terms, we draw two functions instead of one: one "mean function" (mu X) and one "variation function" (KX).
 
-In the noiseless case, those values are actually the true values of the objective function.
+The Gaussian Process is as follows: We select some points. From these points, we draw a gaussian distribution, which gives us a courbe. We can then pick up others points, and redo the process. For every draw that we make of this Gaussian Process, you end up getting a curve that passes through these points. In the noiseless case, those values are actually the true values of the objective function.
+
+## Acquisition Functions
+
+What is an acquisition function? It is a function designed to substitute the objective function. The advantage of doing so is that this function is much easier to evaluate than the original, black-box function. The most commn acquistion function is Thomas sampling. 
+
+What do we do after the Gaussian Process? We can look at two things:
+
+* Point that optimizes. In a Gaussian Process, many functions can be created. Figure 1 ilustrates several functions drawn from 8 points.If we pickup one function, it tells us that it has the best value at this point, that's the point at which we'll do the sampling. 
+
+![Multiple acquisition fucntions](acquisition.png)
+
+* Probability of improvement. We try to pick a point to sample at which that probability of improvement is maximized.
+
+## Optimizing Performance Parameters
